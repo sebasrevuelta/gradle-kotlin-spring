@@ -24,6 +24,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: |
-        apk add openjdk17
+        apk add openjdk21
         apk add maven
         semgrep ci --supply-chain --allow-local-builds --verbose
