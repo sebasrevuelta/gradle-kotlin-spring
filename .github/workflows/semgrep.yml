@@ -20,10 +20,10 @@ jobs:
     env:
       SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
     container:
-      image: semgrep/semgrep
+      image: semgrep/semgrep:1.137.0
     steps:
     - uses: actions/checkout@v4
     - run: |
         apk add openjdk17
         apk add maven
-        semgrep ci --supply-chain --allow-local-builds
+        semgrep ci --supply-chain --allow-local-builds --verbose
