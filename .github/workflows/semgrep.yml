@@ -23,7 +23,4 @@ jobs:
       image: semgrep/semgrep
     steps:
     - uses: actions/checkout@v4
-    - run: |
-        apk add openjdk17
-        apk add maven
-        semgrep ci --supply-chain --allow-local-builds
+    - run: semgrep ci
